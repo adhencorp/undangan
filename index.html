@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan Ultra Cinematic</title>
+<link rel="stylesheet" href="css/style.css">
+  <style>
+/* tambahan untuk sticky countdown */
+#countdownWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250,247,244,0.95);
+  padding: 8px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+
+<!-- OPENING -->
+<div id="opening">
+  <div class="opening-box" id="openingBox">
+    <p>Kepada Yth:</p>
+    <h1 id="namaTamuOpen">Tamu Undangan</h1>
+    <button onclick="bukaUndangan()">💌 Buka Undangan</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="media/233.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <img class="header-img" id="imgKiri" src="media/foto_kiri.jpg" alt="Kiri">
+  <div class="header-text">
+    <p>Kepada Yth:</p>
+    <h1 id="namaTamu">Tamu Undangan</h1>
+    <p>Mohon doa restu pada pernikahan kami</p>
+    <h2>Ahmad & Aisyah</h2>
+  </div>
+  <img class="header-img" id="imgKanan" src="media/foto_kanan.jpg" alt="Kanan">
+</header>
+
+<div id="countdownWrapper">
+  <div>Menuju Acara</div>
+  <ul>
+    <li><span id="d">0</span> Hari</li>
+    <li><span id="h">0</span> Jam</li>
+    <li><span id="m">0</span> Menit</li>
+    <li><span id="s">0</span> Detik</li>
+  </ul>
+</div>
+
+<section id="home" class="tab-content active show">
+  <h2 class="slideUp" id="homeH2"></h2>
+  <p class="slideUp" id="homeP"></p>
+</section>
+
+<section id="acara" class="tab-content">
+  <h2 class="slideUp" id="acaraH2"></h2>
+  <div class="slideUp" id="acaraCard"></div>
+</section>
+
+<section id="galeri" class="tab-content">
+  <h2>Galeri Prewedding</h2>
+  <div class="gallery-grid" id="galeriGrid">
+    <img src="media/1.png">
+    <img src="media/2.png">
+    <img src="media/3.png">
+    <img src="media/gal4.jpg">
+    <img src="media/gal5.jpg">
+    <img src="media/gal6.jpg">
+    <img src="media/gal1.jpg">
+    <img src="media/gal2.jpg">
+    <img src="media/gal3.jpg">
+    <img src="media/gal4.jpg">
+    <img src="media/gal5.jpg">
+    <img src="media/gal6.jpg">
+    <img src="media/gal1.jpg">
+    <img src="media/gal2.jpg">
+    <img src="media/gal3.jpg">
+    <img src="media/gal4.jpg">
+    <img src="media/gal5.jpg">
+    <img src="media/gal6.jpg">
+  </div>
+</section>
+
+<section id="bukutamu" class="tab-content">
+  <h2>Buku Tamu</h2>
+  <div id="bukuForm">
+    <input id="namaHadir" placeholder="Nama Anda">
+    <select id="statusHadir">
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
+    <textarea id="ucapan" placeholder="Ucapan & Doa"></textarea>
+    <button class="action" onclick="kirimHadir()">Kirim</button>
+    <div id="listHadir"></div>
+  </div>
+</section>
+
+<section id="lokasi" class="tab-content">
+  <h2>Lokasi</h2>
+  <iframe id="iframeLokasi" width="100%" height="200" style="border:0;" src="https://maps.google.com/maps?q=masjid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<div class="tabs">
+  <button class="active" onclick="openTab('home',this)">🏠 Home</button>
+  <button onclick="openTab('acara',this)">📅 Acara</button>
+  <button onclick="openTab('galeri',this)">🖼️ Galeri</button>
+  <button onclick="openTab('bukutamu',this)">📖 Buku Tamu</button>
+  <button onclick="openTab('lokasi',this)">📍 Lokasi</button>
+</div>
+
+<div id="galleryPopup" onclick="closeGallery()">
+  <span class="close">✕</span>
+  <img id="popupImg">
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
